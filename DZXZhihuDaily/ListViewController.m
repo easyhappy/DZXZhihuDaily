@@ -29,6 +29,7 @@
     [self setNavigationTitleAndBarButtonItem];
     [self createBanner];
     [self getLatestArticleData];
+    [self topImageAddTapGesture];
     
     [self.bannerScrollView setContentOffset:CGPointMake(SCREEN_WIDTH, 0)];
     self.bannerScrollView.delegate = self;
@@ -65,13 +66,6 @@
     }
 }
 
-- (void)createBannerTitleLabel {
-    UILabel *label = [[UILabel alloc] init];
-    label.numberOfLines = 3;
-    label.font = [UIFont boldSystemFontOfSize:21.0];
-    label.textColor = [UIColor whiteColor];
-}
-
 - (void)loadBannerData {
     for (NSInteger i = 0; i < 7; i ++) {
         _bannerImageView = [[UIImageView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH * i, 0, SCREEN_WIDTH, SCREEN_WIDTH)];
@@ -94,6 +88,24 @@
         
         [_bannerScrollView addSubview:_bannerImageView];
     }
+}
+
+- (void)topImageAddTapGesture {
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGestureMethod)];
+    [_bannerScrollView addGestureRecognizer:tap];
+}
+
+- (void)tapGestureMethod {
+    NSInteger pageIndex = self.bannerScrollView.contentOffset.x / SCREEN_WIDTH;
+    [self topImagePushMethod:pageIndex - 1];
+}
+
+- (void)topImagePushMethod:(NSInteger)index {
+    UIStoryboard *main = [UIStoryboard storyboardWithName:@"main" bundle:nil];
+    ArticleDetailViewController *articleDetailViewController = [main instantiateViewControllerWithIdentifier:@"ArticleDetailView"];
+    TopArticleModel *model = _topArticleList[index];
+    articleDetailViewController.articleID = model.top_articleID;
+    [self.navigationController pushViewController:articleDetailViewController animated:YES];
 }
 
 #pragma mark - HTTP request

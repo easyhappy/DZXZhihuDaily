@@ -24,11 +24,9 @@
     [self createTopView];
     [self getArticleDetailData];
     
-    NSURL *url = [NSURL URLWithString:@"https://www.zhihu.com"];
-    [self.webView loadRequest:[NSURLRequest requestWithURL:url]];
-    
     self.navigationView.hidden = YES;
     self.webView.scrollView.delegate = self;
+    self.webView.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -83,6 +81,32 @@
 - (NSString *)getHTMLStringWithBody:(NSString *)body CSS:(NSString *)css {
     return [NSString stringWithFormat:@"<head><meta charset=%@><link rel=%@ type=%@ href=%@/></head><body>%@</body></html>",@"utf-8",@"stylesheet",@"text/css",css,body];
 }
+
+#pragma mark - UIWebView Delegate
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
+    if (navigationType == UIWebViewNavigationTypeLinkClicked) {
+        [self.topView removeFromSuperview];
+    }
+    return YES;
+}
+
+#pragma mark - ToolBar
+- (IBAction)buttonArrow:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (IBAction)buttonNext:(id)sender {
+}
+
+- (IBAction)buttonVoted:(id)sender {
+}
+
+- (IBAction)buttonShare:(id)sender {
+}
+
+- (IBAction)buttonComment:(id)sender {
+}
+
 
 /*
 #pragma mark - Navigation

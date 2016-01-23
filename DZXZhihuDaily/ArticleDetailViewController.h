@@ -10,7 +10,7 @@
 
 @class ArticleDetailModel;
 
-@interface ArticleDetailViewController : DZXViewController <UIScrollViewDelegate>
+@interface ArticleDetailViewController : DZXViewController <UIScrollViewDelegate, UIWebViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UIWebView *webView;
 @property (strong, nonatomic) UIView *topView; //顶部空间容器

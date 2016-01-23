@@ -581,6 +581,9 @@
                                                 <exclude reference="Ihq-pr-1vf"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <action selector="buttonArrow:" destination="mWl-dA-Zmu" eventType="touchUpInside" id="YkH-6A-zJY"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="04Y-OJ-6s7" userLabel="Next">
                                         <rect key="frame" x="64" y="0.0" width="64" height="43"/>
@@ -594,6 +597,9 @@
                                                 <exclude reference="Xqg-rF-gcu"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <action selector="buttonNext:" destination="mWl-dA-Zmu" eventType="touchUpInside" id="xPg-1g-o9p"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZCm-Up-rke" userLabel="Voted">
                                         <rect key="frame" x="128" y="0.0" width="64" height="43"/>
@@ -602,6 +608,9 @@
                                         </constraints>
                                         <state key="normal" image="News_Navigation_Vote"/>
                                         <state key="highlighted" image="News_Navigation_Voted"/>
+                                        <connections>
+                                            <action selector="buttonVoted:" destination="mWl-dA-Zmu" eventType="touchUpInside" id="aWa-6t-AQV"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hur-Od-2Cb" userLabel="Share">
                                         <rect key="frame" x="192" y="0.0" width="64" height="43"/>
@@ -610,6 +619,9 @@
                                         </constraints>
                                         <state key="normal" image="News_Navigation_Share"/>
                                         <state key="highlighted" image="News_Navigation_Share_Highlight"/>
+                                        <connections>
+                                            <action selector="buttonShare:" destination="mWl-dA-Zmu" eventType="touchUpInside" id="7IH-IW-Mli"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g65-Ts-Yfe" userLabel="Comment">
                                         <rect key="frame" x="256" y="0.0" width="64" height="43"/>
@@ -618,6 +630,9 @@
                                         </constraints>
                                         <state key="normal" image="News_Navigation_Comment"/>
                                         <state key="highlighted" image="News_Navigation_Comment_Highlight"/>
+                                        <connections>
+                                            <action selector="buttonComment:" destination="mWl-dA-Zmu" eventType="touchUpInside" id="5Lc-r6-pC5"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

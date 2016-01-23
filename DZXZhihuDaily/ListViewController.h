@@ -21,6 +21,7 @@
 @property (strong, nonatomic) IBOutlet UIScrollView *bannerScrollView; //滚动视图
 @property (strong, nonatomic) IBOutlet UIPageControl *pageIndex; //页数
 @property (strong, nonatomic) UIImageView *bannerImageView; //滚动视图中的图片视图
+@property (strong, nonatomic) UILabel *titleTextLabel; //滚动视图标题
 @property (strong, nonatomic) UIImageView *maskImageView; //滚动图片上的阴影图片
 
 //数值
