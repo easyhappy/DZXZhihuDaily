@@ -20,6 +20,7 @@
     // Do any additional setup after loading the view.
     [self initContentList];
     
+    self.contentTableView.rowHeight = 44;
     self.navigationView.hidden = YES;
 }
 
@@ -53,14 +54,7 @@
     static NSString *cellIdentifier = @"ContentCell";
     ContentCustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     
-    if (!cell) {
-        cell = [[ContentCustomTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
-                                                 reuseIdentifier:cellIdentifier];
-    }
-    
     cell.contentText.text = self.contentList[indexPath.row];
-    cell.selectionStyle = UITableViewCellSelectionStyleDefault;
-    cell.selectedBackgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Dark_News_Comment_Text_bg_Highlight"]];
     
     return cell;
 }

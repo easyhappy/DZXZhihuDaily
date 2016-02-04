@@ -31,6 +31,7 @@
     [self getLatestArticleData];
     [self topImageAddTapGesture];
     
+    self.articleTableView.rowHeight = 90;
     [self.bannerScrollView setContentOffset:CGPointMake(SCREEN_WIDTH, 0)];
     self.bannerScrollView.delegate = self;
     self.articleTableView.delegate = self;
@@ -240,12 +241,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellIdentifier = @"ArticleCell";
     ArticleCustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
-    //SB创建cell直接从重用池取出来就可以了，不用像xib一样重新创建
-//    
-//    if (!cell) {
-//        cell = [[ArticleCustomTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
-//                                                 reuseIdentifier:cellIdentifier];
-//    }
     
     SectionModel *sectionModel = [[SectionModel alloc] init];
     sectionModel = self.articleSectionList[indexPath.section];
@@ -255,10 +250,6 @@
     [cell setCellWithModel:model];
     
     return cell;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 90;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

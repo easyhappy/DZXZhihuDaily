@@ -18,6 +18,9 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    //cell样式
+    self.selectionStyle = UITableViewCellSelectionStyleDefault;
+    self.selectedBackgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Dark_News_Comment_Text_bg_Highlight"]];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
