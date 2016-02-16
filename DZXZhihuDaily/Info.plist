@@ -29,8 +29,6 @@
 	</dict>
 	<key>UILaunchStoryboardName</key>
 	<string>launchImage</string>
-	<key>UIMainStoryboardFile</key>
-	<string>main</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

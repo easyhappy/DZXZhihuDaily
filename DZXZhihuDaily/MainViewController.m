@@ -56,7 +56,6 @@
     [center addObserver:self selector:@selector(showMenu) name:@"showMenu" object:nil];
 }
 
-
 /*
 #pragma mark - Navigation
 
